@@ -2,7 +2,7 @@
 FROM php:fpm-alpine
 
 # Set the working directory in the container
-WORKDIR /var/www/html
+WORKDIR /var/www/test_yii
 
 # Copy your PHP application code into the container
 COPY ./app .
