@@ -5,7 +5,7 @@ FROM php:8.2-alpine
 WORKDIR /var/www/html
 
 # Copy your PHP application code into the container
-COPY ../app .
+COPY ./app .
 
 RUN apt-get update && \
     docker-php-ext-install pdo pdo_pgsql php-pgsql
