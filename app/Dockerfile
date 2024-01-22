@@ -7,11 +7,11 @@ WORKDIR /var/www/test_yii
 # Copy your PHP application code into the container
 COPY ./app .
 
-RUN apt-get update && \
+RUN apk add --update && \
     set -ex \
       && apk --no-cache add \
         postgresql-dev
-RUN docker-php-ext-install pdo pdo_pgsql php-pgsql
+RUN docker-php-ext-install pdo pdo_pgsql
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
