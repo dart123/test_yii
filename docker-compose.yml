@@ -1,10 +1,12 @@
 version: "3.8"
 services:
   nginx:
+    restart: always
     image: nginx:alpine
     ports:
       - "8080:80"
   php:
+    restart: always
     build:
       context: ./app
       dockerfile: Dockerfile
@@ -15,7 +17,7 @@ services:
   db:
     build:
       context: ./postgres
-    restart: unless-stopped
+    restart: always
     volumes:
       - postgres-data:/var/lib/postgresql/data
     networks:
